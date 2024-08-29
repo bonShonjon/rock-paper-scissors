@@ -1,0 +1,71 @@
+body {
+  background-color: coral;
+  color:antiquewhite;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 30px;
+  display: flex;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-box {
+  border: 6px, solid, antiquewhite;
+  box-sizing: border-box;
+  padding: 30px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: 800px;
+  flex-shrink: 0;
+}
+
+h1 {
+  margin: 0px;
+}
+
+ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  gap: 30px;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  background-color: coral;
+  color: antiquewhite;
+  border: 4px, solid, antiquewhite;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 40px;
+  font-weight: bold;
+  }
+
+  #scorebox-container{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .scorebox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .scorebox p {
+    margin: 0px;
+  }
+
+  .scorebox div {
+    font-size: 50px;
+  }
