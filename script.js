@@ -1,28 +1,16 @@
-playGame();
+//initialise scores
+let humanScore = 0;
+let computerScore = 0;
 
-function playGame() {
-  //initialise score variables
-  let humanScore = 0;
-  let computerScore = 0;
-  //define number of rounds to be played
-  const numberRounds = 5;
-  //play defined number of rounds
-  for (let i = 1; i<=numberRounds; i++) {
-    playRound();
-    console.log(`Round ${i}/${numberRounds} complete.`)
-  }
-  //print result of the game
-  if (humanScore > computerScore) {
-    console.log("You Win!");
-  } else if (computerScore > humanScore) {
-    console.log("You Lose!");
-  } else if (humanScore === computerScore) {
-    console.log("It's a Draw.");
-  }
+//add event listeners to onscreen buttons
+const aBtns = document.querySelectorAll("button");
+aBtns.forEach((btn) => { 
+  btn.addEventListener('click', playRound)
+});
 
-  function playRound() {
+  function playRound(event) {
     //get both player's choices
-    const humanChoice = getHumanChoice();
+    const humanChoice = event.target.id;
     const computerChoice = getComputerChoice();
     //initialise win booleans
     let humanWin = false;
@@ -61,8 +49,6 @@ function playGame() {
     //print scores
     console.log(`Your score: ${humanScore}, Computer score: ${computerScore}`)
   }  
-}
-
 
 function getComputerChoice() {
   //Generate random number between 0 and 3
