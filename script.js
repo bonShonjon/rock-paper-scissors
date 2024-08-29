@@ -4,6 +4,7 @@ let computerScore = 0;
 const humanScoreText = document.querySelector("#human-score");
 const computerScoreText = document.querySelector("#computer-score");
 const roundAnnounceText = document.querySelector("#round-announcer");
+const heading = document.querySelector("h1");
 
 //add event listeners to onscreen buttons
 const aBtns = document.querySelectorAll("button");
@@ -50,6 +51,16 @@ aBtns.forEach((btn) => {
       roundAnnounceText.textContent = `You lose: ${humanChoice} loses to ${computerChoice}!`;
     } else {
       roundAnnounceText.textContent = `Draw: ${humanChoice} against ${computerChoice}.`;
+    }
+
+    if (humanScore >= 5) {
+      heading.textContent = 'You Win!';
+      aBtns.forEach((btn) => {btn.removeEventListener('click', playRound)})
+    }
+
+    if (computerScore >= 5) {
+      heading.textContent = 'You Lose!';
+      aBtns.forEach((btn) => {btn.removeEventListener('click', playRound)})
     }
   }  
 
