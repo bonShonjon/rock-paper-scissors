@@ -69,19 +69,3 @@ function getComputerChoice() {
 
   return computerChoice;
 }
-
-function getHumanChoice() {
-  //Get player's input and convert to lowercase
-  let playerInput = prompt("Which do you choose: Rock, Paper or Scissors?").toLowerCase();
-  let playerChoice;
-  
-  //check player's input is valid, otherwise alert and recursively call this function again
-  if (playerInput === "rock" || playerInput === "paper" || playerInput === "scissors") {
-    playerChoice = playerInput;
-  } else {
-    alert("Your choice is invalid. Please try again.")
-    playerChoice = getHumanChoice();
-  }
-
-  return playerChoice;
-}
