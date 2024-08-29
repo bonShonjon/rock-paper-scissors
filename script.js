@@ -44,13 +44,16 @@ aBtns.forEach((btn) => {
     if (humanWin === true) {
       humanScore++;
       humanScoreText.textContent = humanScore;
-      roundAnnounceText.textContent = `You win: ${humanChoice} beats ${computerChoice}!`;
+      roundAnnounceText.textContent = 
+        `You Win: ${capitalise(humanChoice)} beats ${capitalise(computerChoice)}!`;
     } else if (computerWin === true) {
       computerScore++
       computerScoreText.textContent = computerScore;
-      roundAnnounceText.textContent = `You lose: ${humanChoice} loses to ${computerChoice}!`;
+      roundAnnounceText.textContent = 
+        `You Lose: ${capitalise(humanChoice)} loses to ${capitalise(computerChoice)}!`;
     } else {
-      roundAnnounceText.textContent = `Draw: ${humanChoice} against ${computerChoice}.`;
+      roundAnnounceText.textContent = 
+        `Draw: ${capitalise(humanChoice)} against ${capitalise(computerChoice)}.`;
     }
 
     if (humanScore >= 5) {
@@ -79,4 +82,11 @@ function getComputerChoice() {
   }
 
   return computerChoice;
+}
+
+function capitalise(string) {
+  let firstLetter = string.slice(0, 1).toUpperCase();
+  let restOfString = string.slice(1).toLowerCase();
+
+  return firstLetter + restOfString;
 }
