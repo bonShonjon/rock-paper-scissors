@@ -1,6 +1,9 @@
 //initialise scores
 let humanScore = 0;
 let computerScore = 0;
+const humanScoreText = document.querySelector("#human-score");
+const computerScoreText = document.querySelector("#computer-score");
+const roundAnnounceText = document.querySelector("#round-announcer");
 
 //add event listeners to onscreen buttons
 const aBtns = document.querySelectorAll("button");
@@ -39,15 +42,15 @@ aBtns.forEach((btn) => {
     //increment winner's score and print win/loss/draw message for human player
     if (humanWin === true) {
       humanScore++;
-      console.log(`You win: ${humanChoice} beats ${computerChoice}!`);
+      humanScoreText.textContent = humanScore;
+      roundAnnounceText.textContent = `You win: ${humanChoice} beats ${computerChoice}!`;
     } else if (computerWin === true) {
       computerScore++
-      console.log(`You lose: ${humanChoice} loses to ${computerChoice}!`)
+      computerScoreText.textContent = computerScore;
+      roundAnnounceText.textContent = `You lose: ${humanChoice} loses to ${computerChoice}!`;
     } else {
-      console.log(`Draw: ${humanChoice} against ${computerChoice}.`)
+      roundAnnounceText.textContent = `Draw: ${humanChoice} against ${computerChoice}.`;
     }
-    //print scores
-    console.log(`Your score: ${humanScore}, Computer score: ${computerScore}`)
   }  
 
 function getComputerChoice() {
